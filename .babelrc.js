@@ -23,6 +23,7 @@ module.exports = {
   "plugins": [
     "@babel/plugin-transform-member-expression-literals",
     "@babel/plugin-transform-object-assign",
+    "transform-vue-jsx",
     "@babel/plugin-transform-property-literals",
     ["@babel/plugin-transform-runtime", {
       "helpers": true,

@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const VueLoaderPlugin = require('vue-loader-plugin')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
 const path = require('path')
@@ -15,6 +16,10 @@ module.exports = merge(baseConfig, {
   },
   module: {
     rules: [
+      {
+        test: /.vue$/,
+        loader: require.resolve('vue-loader')
+      },
       {
         test: /\.(jsx|js)$/,
         exclude: /(node_modules|bower_components)/,
@@ -33,6 +38,7 @@ module.exports = merge(baseConfig, {
       chunks: ['index'],
       inject: true,
     }),
+    // new VueLoaderPlugin(),
   ],
   resolve: {
     alias: {
